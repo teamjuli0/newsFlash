@@ -1,7 +1,7 @@
 var express = require('express')
 var logger = require('morgan')
 var mongoose = require('mongoose')
-
+var PORT = process.env.PORT || 3000
 
 var app = express()
 
@@ -20,7 +20,7 @@ require('./routes/htmlRoutes')(app)
 
 //fs read then send
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log('App running on port 3000!')
 })
 
