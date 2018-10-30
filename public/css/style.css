@@ -1,0 +1,17 @@
+body {
+  background: rgb(143, 163, 172);
+}
+
+.notesCard {
+  position: fixed;
+  width: 30vw !important;
+  top: 9vh
+}
+
+.notesImg {
+  width: 100% !important;
+}
+
+.scrapedImg {
+  width: 100% !important;
+}
