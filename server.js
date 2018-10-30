@@ -10,10 +10,14 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
 
-mongoose.connect(
-  'mongodb://localhost/newsSites',
-  { useNewUrlParser: true }
-)
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI)
+} else {
+  mongoose.connect(
+    'mongodb://localhost/newsSites',
+    { useNewUrlParser: true }
+  )
+}
 
 require('./routes/apiRoutes')(app)
 require('./routes/htmlRoutes')(app)
